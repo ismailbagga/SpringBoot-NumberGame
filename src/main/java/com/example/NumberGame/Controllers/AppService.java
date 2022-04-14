@@ -46,4 +46,8 @@ public class AppService {
         if (personalBest.isEmpty()) return null ;
         return  personalBest.get() ;
     }
+
+    public List<PersonalBest> getAll() {
+        return personalBestRepo.findAll() ;
+    }
 }

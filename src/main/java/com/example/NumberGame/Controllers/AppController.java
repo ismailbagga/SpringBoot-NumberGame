@@ -36,4 +36,9 @@ public class AppController {
 
         return new ResponseEntity<>(appService.savePersonalBest(personalBest), HttpStatus.ACCEPTED) ;
     }
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllPersonalBest() {
+
+        return new ResponseEntity(appService.getAll(), HttpStatus.ACCEPTED) ;
+    }
 }
