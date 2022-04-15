@@ -50,4 +50,9 @@ public class AppService {
     public List<PersonalBest> getAll() {
         return personalBestRepo.findAll() ;
     }
+
+    public Boolean deleteAll() {
+        personalBestRepo.deleteAll();
+    return true ;
+    }
 }

@@ -41,4 +41,8 @@ public class AppController {
 
         return new ResponseEntity(appService.getAll(), HttpStatus.ACCEPTED) ;
     }
+    @DeleteMapping("/all")
+    public ResponseEntity<?> deleteAll() {
+        return  ResponseEntity.ok(appService.deleteAll()) ;
+    }
 }
