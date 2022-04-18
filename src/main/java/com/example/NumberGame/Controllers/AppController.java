@@ -27,9 +27,9 @@ public class AppController {
     @Autowired
     private AppService appService  ;
     @GetMapping("/friend")
-    public ResponseEntity<?> getFriendPersonalBest(@RequestParam(value = "email") String  email) {
-        System.out.println("email is : "+email);
-        return new ResponseEntity(appService.retrieveFriendPersonBest(email), HttpStatus.ACCEPTED) ;
+    public ResponseEntity<?> getFriendPersonalBest(@RequestParam(value = "name") String  name) {
+        System.out.println("email is : "+name);
+        return new ResponseEntity(appService.retrieveFriendPersonBest(name), HttpStatus.ACCEPTED) ;
     }
     @PostMapping("/save")
     public ResponseEntity<?> savePersonalBest(@RequestBody PersonalBest personalBest) {
@@ -38,9 +38,16 @@ public class AppController {
     }
     @GetMapping("/all")
     public ResponseEntity<?> getAllPersonalBest() {
-
         return new ResponseEntity(appService.getAll(), HttpStatus.ACCEPTED) ;
     }
+    @PostMapping("/complete")
+    public ResponseEntity<?> completeLevel(@RequestParam(value = "name") String name ,
+                                           @RequestParam(value = "gameId") int id  )  {
+
+        return  ResponseEntity.ok(appService.completeLevel(name,id)) ;
+    }
+
+
     @DeleteMapping("/all")
     public ResponseEntity<?> deleteAll() {
         return  ResponseEntity.ok(appService.deleteAll()) ;
