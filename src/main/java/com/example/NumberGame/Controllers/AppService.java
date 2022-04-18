@@ -85,6 +85,6 @@ public class AppService {
             }
             game.get().setCompleted(true);
 
-            return  new RequestState(HttpStatus.FOUND,"update level state") ;
+            return  new RequestState(HttpStatus.FOUND,"update level state!") ;
     }
 }
